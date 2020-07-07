@@ -1,0 +1,31 @@
+<div>
+<mat-card >
+
+  <mat-card-header class="mb-3">
+    <mat-card-title>File Uploads</mat-card-title>
+  </mat-card-header>
+
+  <div id="drag_zone" class="file-upload-wrapper" (drop)="dropFiles($event)"
+    (dragover)='dragOverHandler($event)'>Drag your thing here</div>
+
+  <mat-list>
+    <mat-list-item *ngFor="let file of this.selectedFiles" [class.upload-sucess]="file.uploadCompleted">
+      <mat-icon mat-list-icon>note</mat-icon>
+      <div mat-line>{{file.fileName}}</div>
+
+      <mat-progress-bar class="mr-4" mode="determinate" value="{{file.uploadedPercent}}"></mat-progress-bar>
+
+      <div>
+        <mat-icon style="cursor: grab;margin-top: 2px;" (click)="deleteFile(file)">delete</mat-icon>
+      </div>
+      <mat-divider></mat-divider>
+    </mat-list-item>
+  </mat-list>
+
+  <button (click)="uploadFiles()" class="btn btn-primary mt-3" [disabled]="this.selectedFiles.length <=0"> upload Files
+  </button>
+
+
+
+</mat-card>
+</div>
