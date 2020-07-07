@@ -1,5 +1,5 @@
 # Resumable-upload
-Multiple ,Resumable , with Drag and Drop in Angular and Node  
+Multiple ,Resumable , with Drag/Drop and Progress Bar in Angular and Node  
 
 
 
